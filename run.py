@@ -1,5 +1,3 @@
-print("Hola mundo Nro 1")
-
 from app import app
 
 #decorador
@@ -7,8 +5,8 @@ from app import app
 
 @app.route("/")
 def hello_world():
-    return "<p>Mi primer hello word con flask</p>"
+    return "/app/base.html"
 
-if __name__ == "master":
+if __name__ == "__master__":
     app.run(debug = True)
 
