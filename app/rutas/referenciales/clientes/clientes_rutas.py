@@ -1,14 +1,15 @@
 from flask import Blueprint, render_template
+from app.modelos.referenciales.clientes.ClientesModel import ClientesModel
 
-clientesmod = Blueprint("clientes", __name__, template_folder="templates")
+# Se crea el módulo para Blueprint
+nacmod = Blueprint("nacionalidad", __name__, template_folder="templates")
+cli_model = ClientesModel()
 
-#Los edpoints
-@clientesmod.route('/')
+# Los endpoints
+@nacmod.route('/')
 def index():
-    #retornar algo
-    return "Se realizara el index de clientes"
-    
-
-
+    items = cli_model.listarTodos()
+    print(items)
+    return render_template('clientes/index.html', items=items)
 
 

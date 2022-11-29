@@ -1,12 +1,9 @@
 from app import app
 
-#decorador
-#endpoint
-
 @app.route("/")
 def hello_world():
-    return "/app/base.html"
+    return "<p>Hello, World!</p>"
 
-if __name__ == "__master__":
+if __name__ == "__main__":
     app.run(debug = True)
 
