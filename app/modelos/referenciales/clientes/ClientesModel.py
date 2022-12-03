@@ -1,10 +1,10 @@
 from flask import current_app as app
-from app.conexion.Conexion import Conexion
+#from app.conexion.Conexion import Conexion
 
-class NacionalidadModel:
+class ClientesModel:
     
-    #def listarTodos(self):
-    #    try:
+    def listarTodos(self):
+        try:
     #        conexion = Conexion()
     #        con = conexion.getConexion()
     #        cursor = con.cursor()
@@ -13,5 +13,6 @@ class NacionalidadModel:
     #        cursor.close()
     #        con.close()
     #        return items
-    #    except:
-    #        app.logger.error('Ha ocurrido un error al listar nacionalidades')
+            return "ClientesModel > listarTodos > return"
+        except:
+            app.logger.error('Ha ocurrido un error al listar Clientes')

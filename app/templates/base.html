@@ -10,18 +10,21 @@
             {% block titulo_pagina %}
             {% endblock %}
         </title>
-        <!--link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /->
-        <link href="{{ url_for('static', filename='../css/styles.css') }}" rel="stylesheet" /-->
-        <script src="../static/css/styles.css"></script>
-        <!--script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script->
-        <link href="{{ url_for('static', filename='js/all.js') }}" rel="stylesheet" /-->
-        <script src="../static/js/all.js"></script>
+       
+        <!-- inicios de bootstrap-->
+        <!--link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style_simple_datatable.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <!--script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script-->
+        <script src="{{ url_for('static', filename='js/font_all.js') }}"></script>
+
+       
     </head>
     <body class="sb-nav-fixed">
         {# barra top #}
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="{{ url_for('static', filename='rutas/referenciales/ciudad/index.html') }}index.html">Start Bootstrap</a>
+            <a class="navbar-brand ps-3" href="#">Sistema de Gestión</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -33,8 +36,8 @@
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <li class="navbar nav-item dropdown">
+                    <a class="navbar nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
@@ -49,23 +52,23 @@
 
             {# Menu layout #}
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                <nav class="navbar sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="navbar sb-sidenav-menu">
+                        <div class="navbar nav">
+                            <div class="navbar sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="navbar sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Mi sistema
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="navbar sb-sidenav-menu-heading">Interface</div>
+                            <a class="navbar nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="navbar sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Referenciales
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                <div class="navbar sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ url_for('ciudad.index') }}">Ciudad</a>
+                            <div class="navbar collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="navbar sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ url_for('clientes.index') }}">Clientes</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -253,15 +256,18 @@
             {% endblock %}
 
         </div>
+
         
         {# Layout de los recursos de javascript. #} 
-        <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
-        {#  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> #}
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/jquery-3.6.1.min.js') }}" crossorigin="anonymous"></script>
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <script src="{{ url_for('static', filename='js/Chart.min.js') }}" crossorigin="anonymous"></script>
-        <script src="{{ url_for('static', filename='assets/demo/chart-area-demo.js') }}"></script>
-        <script src="{{ url_for('static', filename='assets/demo/chart-bar-demo.js') }}"></script>
         <script src="{{ url_for('static', filename='js/simple-datatables@latest.js') }}" crossorigin="anonymous"></script>
         <script src="{{ url_for('static', filename='js/datatables-simple-demo.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/axios.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/chart-area-demo.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/chart-bar-demo.js') }}"></script>
+        {% block js %}{% endblock %}
     </body>
 </html>
