@@ -33,10 +33,10 @@ Clientes
                                   </tr>
                                 </thead>
                                 <tbody>
-                                   <!--{% for item in items %}-->
+                                   {% for item in items %}
                                     <tr>
-                                        <th scope="row" class="align-middle">XD</th>
-                                        <th scope="row" class="align-middle">xd</th>
+                                        <th scope="row" class="align-middle">{{ item[1] }}</th>
+                                        
                                         <td class="d-flex justify-content-end">
                                             <div class="btn-group" role="group" aria-label="Botones para accion">
                                                 <button type="button" class="btn btn-outline-primary">Editar</button>
@@ -44,7 +44,7 @@ Clientes
                                             </div>
                                         </td>
                                     </tr>
-                                  <!--{% endfor %}-->                       
+                                  {% endfor %}                       
                                 </tbody>
                               </table>
                         </div>
