@@ -11,7 +11,14 @@ cli_model = ClientesModel()
 def index():
     items = cli_model.listarTodos()
     print(items)
-    return render_template('clientes/index.html', item = items)
-    #return render_template('clientes/index.html')
+    return render_template('clientes/index.html', items_rutas = items)
 
 
+#@nacmod.route('/frm_nacionalidad')
+@nacmod.route('/form_clientes')
+#def frm_nacionalidad():
+def form_clientes():
+    id = request.args.get('id')
+    descripcion = request.args.get('descripcion')
+    #return render_template('nacionalidad/frm_nacionalidad.html', nac={ 'id': id, 'descripcion': descripcion })
+    return render_template('nacionalidad/form_clientes.html', nac={ 'id': id, 'descripcion': descripcion })

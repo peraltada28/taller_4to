@@ -12,7 +12,7 @@ Clientes
         <div class="container-fluid px-4">
             <h1 class="mt-4">
                 {% block mi_dashboard_title %}
-                Referencial Nacionalidad
+                Dashboard
                 {% endblock %}
             </h1>
             <div class="row">
@@ -20,7 +20,7 @@ Clientes
                     <div class="card mb-4">
                         <div class="card-header">
                             <div class="d-flex flex-row justify-content-between">
-                                <h5>Inicio - Lista de Nacionalidad</h5>
+                                <h5>Administrar Clientes</h5>
                                 <button type="button" class="btn btn-outline-primary">Agregar</button>
                             </div>
                         </div>
@@ -28,14 +28,14 @@ Clientes
                             <table class="table">
                                 <thead>
                                   <tr>
-                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Nombre y apellido</th>
                                     <th scope="col" class="text-end">Acción</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                   {% for item in items %}
+                                   {% for item_index in items_rutas %}
                                     <tr>
-                                        <th scope="row" class="align-middle">{{ item[1] }}</th>
+                                        <th scope="row" class="align-middle">{{ item_index[1] }}</th>
                                         
                                         <td class="d-flex justify-content-end">
                                             <div class="btn-group" role="group" aria-label="Botones para accion">
