@@ -15,7 +15,7 @@ def index():
 
 
 #@nacmod.route('/frm_nacionalidad')
-@nacmod.route('/form_clientes')
+@clientesmod.route('/form_clientes')
 #def frm_nacionalidad():
 def form_clientes():
     id = request.args.get('id')
