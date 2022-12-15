@@ -15,10 +15,18 @@ def index():
 
 
 #@nacmod.route('/frm_nacionalidad')
-@clientesmod.route('/form_clientes')
+@clientesmod.route('/agregar_clientes_rut', methods=['POST'])
 #def frm_nacionalidad():
-def form_clientes():
-    id = request.args.get('id')
-    descripcion = request.args.get('descripcion')
-    #return render_template('nacionalidad/frm_nacionalidad.html', nac={ 'id': id, 'descripcion': descripcion })
-    return render_template('nacionalidad/form_clientes.html', nac={ 'id': id, 'descripcion': descripcion })
+def agregar_clientes_rut():
+    nombre_apellido = request.json['rec_nombres']
+    ci_o_ruc = request.json['rec_ci_o_ruc']
+    telefono = request.json['rec_telefono']
+    direccion = request.json['rec_direccion']
+    estado_cli = "ACTIVO"
+
+    res = cli_model.agregar_clientes_mod(nombre_apellido, ci_o_ruc, telefono, direccion, estado_cli)
+
+    if res:
+        return jsonify({'estado': res, 'mensaje': 'se guardo exitosamente'})
+        
+    return jsonify({'estado': 'error', 'mensaje': 'hendy'})

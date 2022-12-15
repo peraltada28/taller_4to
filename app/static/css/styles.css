@@ -4047,7 +4047,7 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: top;
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -5801,8 +5801,8 @@ textarea.form-control-lg {
 .tooltip .tooltip-arrow {
   position: absolute;
   display: block;
-  width: 0.8rem;
-  height: 0.4rem;
+  width: 0.4rem;
+  height: 0.2rem;
 }
 .tooltip .tooltip-arrow::before {
   position: absolute;
@@ -11326,7 +11326,7 @@ body {
 #layoutSidenav #layoutSidenav_nav {
   flex-basis: 225px;
   flex-shrink: 0;
-  transition: transform 0.15s ease-in-out;
+  transition: transform 0.05s ease-in-out;
   z-index: 1038;
   transform: translateX(-225px);
 }
